@@ -1,0 +1,13 @@
+<h3>Bookmarks</h3>
+<% if @bookmarks.any? %>
+  <ul class="list-group mb-3">
+    <% @bookmarks.each do |bookmark| %>
+      <li class="list-group-item">
+        <strong><%= bookmark.movie.title %></strong> | <%= bookmark.comment %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No movies bookmarked yet.</p>
+<% end %>
+<%= link_to "Back to all lists", lists_path, class: "btn btn-secondary" %>
