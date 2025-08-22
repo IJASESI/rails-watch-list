@@ -1,10 +1,22 @@
+<%= render "shared/navbar" %>
+
+<div class="banner">
+    <div class="container">
+        <h1>Save any kind of movies</h1>
+        <a class="btn btn-ghost" href="/lists/new">Create a movie list</a>
+    </div>
+</div>
+
 <h1>Movie Lists</h1>
 
-<ul class="list-group">
-  <% @lists.each do |list| %>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <%= link_to list.name, list_path(list)%>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Create a new list", new_list_path, class: "btn btn-primary" %>
+<% colors = ["#F86D70", "#515065", "#F56E0A", "#A0616A", "#2E2E41" ] %>
+
+<div class="cards">
+
+    <% @lists.each do |list| %>
+        <div class="card-category" style="background-color:<%= colors.sample %>;">
+            <%= link_to list.name, list_path(list) %>
+        </div>
+    <% end %>
+
+</div>
