@@ -4,6 +4,5 @@ class Bookmark < ApplicationRecord
   validates :movie, uniqueness: { scope: :list_id }
   validates :comment, length: { minimum: 6 }
 
-  attr_accessor :movie_title
 
 end
